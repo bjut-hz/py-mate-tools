@@ -5,6 +5,12 @@ __pycache__/
 # C extensions
 *.so
 
+# pycharm IDE
+.idea/
+
+# model data
+models/
+
 # Distribution / packaging
 .Python
 env/

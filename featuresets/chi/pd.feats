@@ -1,0 +1,16 @@
+
+ChildWordSet - size: 19416 # 96.485
+PredParentWord - size: 4772 # 97.881
+DepSubCat - size: 10376 # 98.183
+PredDeprel - size: 19 # 98.265
+ChildPOSSet - size: 34 # 98.296
+PredParentPOS - size: 31 # 98.328
+ChildDepSet - size: 24 # 98.358
+ChildWordSet+DepSubCat - size: 124898 # 98.719
+DepSubCat+PredParentWord - size: 25326 # 98.847
+ChildWordSet+PredParentWord - size: 62401 # 98.930
+ChildWordSet+PredParentPOS - size: 41068 # 98.978
+PredParentPOS+PredParentWord - size: 5317 # 99.014
+PredPOS+PredParentWord - size: 7509 # 99.035
+ChildWordSet+PredDeprel - size: 35242 # 99.053
+PredDeprel+PredParentWord - size: 7766 # 99.071

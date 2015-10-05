@@ -1,0 +1,13 @@
+
+POSPath - size: 768 # 67.769
+ArgDeprel - size: 39 # 89.799
+DeprelPath - size: 1381 # 89.940
+LeftSiblingWord - size: 7889 # 89.978
+ArgPOS - size: 11 # 89.996
+LeftFeats - size: 57 # 90.069
+RightSiblingWord - size: 9074 # 90.112
+ArgWord - size: 13586 # 90.133
+LeftWord+POSPath - size: 2807 # 90.198
+DepSubCat+DeprelPath - size: 15319 # 90.291
+DeprelPath+Position - size: 1553 # 90.364
+POSPath+RightSiblingFeats - size: 9681 # 90.456

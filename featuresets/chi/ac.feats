@@ -1,0 +1,24 @@
+
+ArgDeprel - size: 30 # 70.973
+ArgWord - size: 15967 # 76.461
+PredLemmaSense - size: 8897 # 78.738
+DeprelPath - size: 4503 # 80.958
+Position - size: 3 # 82.420
+ArgPOS - size: 32 # 83.357
+RightWord - size: 5342 # 83.797
+ChildDepSet - size: 25 # 84.146
+RightPOS - size: 29 # 84.401
+PredLemma - size: 8436 # 84.713
+LeftSiblingPOS - size: 31 # 84.893
+ChildPOSSet - size: 33 # 85.126
+LeftSiblingWord - size: 7568 # 85.238
+PredWord - size: 8436 # 85.269
+LeftWord - size: 7290 # 85.354
+RightSiblingWord - size: 9315 # 85.396
+PredParentWord - size: 4009 # 85.428
+LeftPOS - size: 29 # 85.471
+PredPOS - size: 26 # 85.497
+Position+PredLemmaSense - size: 13073 # 86.466
+ArgPOS+PredLemma - size: 16846
+RightPOS+RightSiblingPOS - size: 367
+ArgWord+Position - size: 13582

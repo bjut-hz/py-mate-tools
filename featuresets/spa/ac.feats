@@ -1,0 +1,17 @@
+
+ArgDeprel - size: 40 # 50.718
+PredLemmaSense - size: 4318 # 69.992
+ArgWord - size: 14758 # 78.809
+RightWord - size: 13337 # 79.771
+PredLemma - size: 2436 # 80.966
+ChildDepSet - size: 36 # 81.791
+LeftWord - size: 1223 # 82.487
+ArgFeats - size: 51 # 82.753
+Position - size: 3 # 83.028
+RightSiblingWord - size: 9942 # 83.192
+RightPOS - size: 12 # 83.415
+RightFeats - size: 58 # 83.441
+PredFeats+PredLemmaSense - size: 85344 # 84.188
+ArgWord+RightWord - size: 42446 # 84.584
+ArgPOS+PredLemma - size: 8440 # 84.833
+ArgWord+ChildDepSet - size: 47488 # 83.53

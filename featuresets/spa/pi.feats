@@ -1,0 +1,18 @@
+
+PredWord
+PredLemma
+PredParentWord
+PredParentPOS
+ChildDepSet
+ChildWordSet
+ChildWordSet+ChildDepSet
+ChildPOSSet
+ChildPOSSet+ChildDepSet
+DepSubCat
+PredDeprel
+##
+## NOTE: These features are just copied from the English dir.
+##       A feature selection should be run to fix this.
+##       This is an initial draft just to execute the system.
+##
+##

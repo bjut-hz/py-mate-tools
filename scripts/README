@@ -1,0 +1,83 @@
+This folder contains some scripts to execute the system. They all need
+to be edited slightly before use with proper paths to corpora and/or
+models. They are meant to be executed from the parent directory, e.g.
+
+  cd $DIST_ROOT
+  sh scripts/learn.sh
+
+There are some comments in the script on switches etc. The amount of
+memory used is typically whats required for the English CoNLL 2009
+corpora. It might be possible to push it down a bit.
+
+
+Since the system grew out of the CoNLL 2009 ST, there are a couple of
+different ways to parse a corpus:
+
+(i) parse_full.sh - parses a complete corpus using all steps of the
+                    pipeline except tokenization. It pretty much
+                    assumes that that the file contains tokens in the
+                    second column and disregards the rest. 
+                    If the -nopi switch is used, it needs to have the
+                    IsPred column from the CoNLL 2009 data format.
+
+(ii) parse_srl_only.sh - parses semantic roles only. The input is
+                         expected to be the CoNLL 2009 data format
+                         with proper dependency trees (ie. the
+                         SRLonly evaluation corpus).
+                         In order to replicate the setting of the 2009
+                         ST, one can use the -nopi switch to skip the
+                         predicate identification step.
+
+
+Then there is also the HTTP interface. This is started by the
+run_http_server.sh script. Again, edit the file with proper paths
+before executing it.
+
+NOTE: the http server depends on the java package
+com.sun.net.httpserver (cf.
+http://download.oracle.com/javase/6/docs/jre/api/net/httpserver
+/spec/com/sun/net/httpserver/package-summary.html
+and
+http://blogs.sun.com/michaelmcm/entry/http_server_api_in_java
+), which is not part of the real Java specification, but comes with
+most (or at least some) JRE distributions. From my own experience,
+it is included in the Sun Java 6 distribution* as well as the OpenJDK 
+Java 6**.
+
+[[
+ *: 
+  On a Mac:
+  % java -version
+  java version "1.6.0_17"
+  Java(TM) SE Runtime Environment (build 1.6.0_17-b04-248-10M3025)
+  Java HotSpot(TM) 64-Bit Server VM (build 14.3-b01-101, mixed mode)
+  %
+
+ and
+  On pc, mandriva linux:
+  % /usr/lib/jvm/java-sun/bin/java -version
+  java version "1.6.0_15"
+  Java(TM) SE Runtime Environment (build 1.6.0_15-b03)
+  Java HotSpot(TM) 64-Bit Server VM (build 14.1-b02, mixed mode)
+  %
+
+ **:
+  On pc, mandriva linux:
+  % java -version
+  java version "1.6.0_18"
+  OpenJDK Runtime Environment (IcedTea6 1.8) (mandriva-2.b18.2mdv2009.1-x86_64)
+  OpenJDK 64-Bit Server VM (build 14.0-b16, mixed mode)
+  %
+]]
+
+The graphical dependency graph output of the HTTP interface relies on 
+having Chinese fonts install properly locally. On Linux I had some issues
+with this, but resolved them according to
+http://blog.lizhao.net/2007/03/java-chinese-fonts-on-ubuntu.html
+
+The graphcical dependency graph output also seems to work less good 
+when using OpenJDK. The images get strange lines through them. The Sun
+JRE seems to work fine though. 
+
+
+Feedback and questions are appreciated: anders@ims.uni-stuttgart.de

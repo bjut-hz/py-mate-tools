@@ -1,0 +1,7 @@
+
+ChildDepSet - size: 36 # 82.59
+PredFeats - size: 29 # 83.82
+ChildWordSet - size: 15446 # 84.51
+PredWord - size: 9404 # 84.56
+ChildDepSet+PredPOS - size: 75 # 84.77
+ChildPOSSet - size: 11495 # 84.97

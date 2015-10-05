@@ -5,6 +5,13 @@ __pycache__/
 # C extensions
 *.so
 
+*.out
+input data format.txt
+windows args.txt
+
+# test data
+data/
+
 # pycharm IDE
 .idea/
 

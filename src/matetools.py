@@ -1,12 +1,10 @@
-__author__ = 'hz'
+from __future__ import unicode_literals
 
 import tempfile
 import os
 from subprocess import PIPE
 from internals import find_jar, find_jar_iter, config_java, java, _java_options
-import compat
 import nltk
-
 
 
 class DataFormat:
@@ -52,14 +50,14 @@ class MateTools():
     OUTPUT_FORMAT = r"conll2009"
 
 
-    def __init__(self, java_options = '-Xmx4g', encoding = 'utf8' ):
+    def __init__(self,  encoding = 'utf8', java_options = '-Xmx4g' ):
         self.java_options = java_options
         self.encoding = encoding
         self.classpath = ( r'srl.jar', r'lib\anna-3.3.jar', r'lib\liblinear-1.51-with-deps.jar',
                            r'lib\opennlp-tools-1.5.2-incubating.jar', r'lib\opennlp-maxent-3.0.2-incubating.jar',
                            r'lib\seg.jar' )
 
-    def SRL( self, sentence, cwd = r"./", file_name = r"result.out", verbose = False ):
+    def SRL( self, sentence, file_name = r"result.out", verbose = False ):
         cmd = [
             self.MAIN_CLASS,
             'eng',
@@ -78,6 +76,11 @@ class MateTools():
         :param verbose:
         :return:
         """
+        # change the work directory
+        dir =  os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir) )
+        cwd=os.getcwd()
+        os.chdir(dir)
+
         encoding = self.encoding
         default_options = ' '.join( _java_options )
 
@@ -88,24 +91,28 @@ class MateTools():
 
         input_ = data_format.dataFormat( input_ )
         if None == input_:
-            raise ValueError( 'data format failed.' )
+            raise ValueError( 'data format failed: input param format error.' )
 
         # Windows is incompatible with NamedTemporaryFile() without passing in delete=False.
-        with tempfile.NamedTemporaryFile( mode = 'wb', delete = False ) as input_file:
-            if isinstance( input_, compat.text_type ) and encoding:
-                input_ = input_.encode( encoding )
+        # create the file with mode w+,
+        with tempfile.NamedTemporaryFile( mode = 'w+', delete = False ) as input_file:
             input_file.writelines( input_ )
             input_file.flush()
+
 
             cmd.extend( [ '-test', input_file.name ] )
             cmd.extend( [ '-out', result_file_name ] )
             stdout, stderr = java( cmd, classpath = self.classpath, stdout = PIPE, stderr = PIPE )
 
             if verbose:
+                print( 'stdout:' )
                 print( stdout )
+                print( 'stderr:' )
                 print( stderr )
 
-            os.unlink( input_file.name )
+        os.unlink( input_file.name )
 
-            # Return java configurations to their default values.
-            config_java( options = default_options, verbose = False )
+        # Return java configurations to their default values.
+        config_java( options = default_options, verbose = False )
+
+        os.chdir( cwd )

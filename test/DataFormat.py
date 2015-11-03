@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 __author__ = 'hz'
 import nltk
 
@@ -34,8 +35,9 @@ class DataFormat:
         return result
 
     def __save( self, data ):
-        f = file( 'tmp', 'w+' )
+        f = file( 'tmp', 'wb' )
         f.writelines( data )
+        f.flush()
         f.close()
 
 

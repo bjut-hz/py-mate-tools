@@ -21,7 +21,7 @@ cmd = [r'C:\Program Files\Java\jdk1.8.0_60\bin\java.exe',
        u'-tagger', u'models\CoNLL2009-ST-English-ALL.anna-3.3.postagger.model',
        u'-parser', u'models\CoNLL2009-ST-English-ALL.anna-3.3.parser.model',
        u'-srl', u'models\CoNLL2009-ST-English-ALL.anna-3.3.srl-4.1.srl.model',
-       u'-test', r'data\test.txt',
+       u'-test', r'C:\Users\hz\AppData\Local\Temp\tmpyjo8p9',
        u'-out', u'eng-test.out']
 
 package_directory = os.path.dirname(os.path.abspath(__file__))
@@ -33,7 +33,9 @@ os.chdir(dir)
 
 p = subprocess.Popen( cmd, stdin = None, stdout = subprocess.PIPE, stderr = subprocess.PIPE )
 (stdout, stderr) = p.communicate()
+print( 'stderr:' )
 print( stderr )
+print( 'stdout:' )
 print( stdout )
 p.wait()
 

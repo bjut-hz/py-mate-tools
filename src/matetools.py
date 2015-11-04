@@ -57,7 +57,7 @@ class MateTools():
                            r'lib\opennlp-tools-1.5.2-incubating.jar', r'lib\opennlp-maxent-3.0.2-incubating.jar',
                            r'lib\seg.jar' )
 
-    def SRL( self, sentence, file_name = r"result.out", verbose = False ):
+    def SRL( self, sentence, result_file_path = r".\\", file_name = r"result.out", verbose = False ):
         cmd = [
             self.MAIN_CLASS,
             'eng',
@@ -66,9 +66,9 @@ class MateTools():
             '-parser', self.PARSER_MODEL,
             '-srl', self.SRL_MODEL,
         ]
-        self._execute( cmd, sentence, verbose, file_name )
+        self._execute( cmd, sentence, verbose, result_file_path, file_name )
 
-    def _execute(self, cmd, input_, verbose=False, result_file_name = 'result.out' ):
+    def _execute(self, cmd, input_, verbose=False, result_file_path = r'.\\', result_file_name = 'result.out' ):
         """
 
         :param cmd:
@@ -101,7 +101,7 @@ class MateTools():
 
 
             cmd.extend( [ '-test', input_file.name ] )
-            cmd.extend( [ '-out', result_file_name ] )
+            cmd.extend( [ '-out', result_file_path + r'\\' + result_file_name ] )
             stdout, stderr = java( cmd, classpath = self.classpath, stdout = PIPE, stderr = PIPE )
 
             if verbose:

@@ -76,8 +76,9 @@ class MateTools():
         :param verbose:
         :return:
         """
-        # change the work directory
-        dir =  os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir) )
+        # # change the work directory
+        # dir =  os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir) )
+        dir = os.path.dirname(__file__)
         cwd=os.getcwd()
         os.chdir(dir)
 

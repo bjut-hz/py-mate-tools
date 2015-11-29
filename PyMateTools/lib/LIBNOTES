@@ -1,0 +1,72 @@
+This file briefly describes the role of the libraries which are used
+by the SRL system and references their associated licenses.
+
+------------------------------------------------------------------------
+anna-3-3.jar
+
+mate-tools anna, Downloaded 2012-11-16 10:20 CET
+Homepage: http://code.google.com/p/mate-tools/
+License: GPL (see GPL.txt)
+
+The jar from mate-tools.
+Used for lemmatizing, pos tagging, morphological tagging and
+dependency parsing.
+
+------------------------------------------------------------------------
+liblinear-1.51-with-deps.jar
+
+liblinear (java implementation), version 1.51
+Homepage: http://www.bwaldvogel.de/liblinear-java/
+License: own license (see LL-LICENSE.txt)
+
+Powerful machine-learning library.
+Used for training models in the SRL system.
+
+------------------------------------------------------------------------
+opennlp-tools-1.5.2-incubating.jar
+
+OpenNLP Tools, version 1.5.2
+Homepage: http://opennlp.apache.org/
+License: Apache License (see APACHE-LICENSE-2.0.txt)
+
+Package that provides various NLP tools.
+Used for the tokenization step in the pipeline.
+
+------------------------------------------------------------------------
+opennlp-maxent-3.0.2-incubating.jar
+
+Part of OpenNLP Tools, version 1.5.2
+Homepage: http://opennlp.apache.org/
+License: Apache License (see APACHE-LICENSE-2.0.txt)
+
+Package that provides various NLP tools.
+Used for the tokenization step in the pipeline.
+
+------------------------------------------------------------------------
+seg.jar
+
+Stanford Chinese Word Segmenter, version 3.2.0
+Homepage: http://nlp.stanford.edu/software/segmenter.shtml
+License: GPL (see GPL.txt)
+
+Chinese word segmenter. Used for Chinese.
+
+------------------------------------------------------------------------
+stanford-parser.jar
+
+Stanford Parser, version 3.2.0
+HomePage: http://nlp.stanford.edu/software/lex-parser.shtml
+License: GPL (see GPL.txt)
+
+Stanford Parser. Used for tokenization of English and French.
+
+------------------------------------------------------------------------
+whatswrong-0.2.3.jar
+
+What's Wrong With My NLP?, version 0.2.3
+Homepage: http://code.google.com/p/whatswrong/
+License: GPL (see GPL.txt)
+
+A visualizer for Natural Language Processing problems.
+Used by the HTTP interface to generate graphical output of depency
+graphs.

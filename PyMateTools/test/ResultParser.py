@@ -1,5 +1,6 @@
 __author__ = 'hz'
 import re
+import copy
 
 class Parser():
     def __init__(self):
@@ -55,14 +56,14 @@ class Parser():
                                                 if 'DT' == item[i][5] or 'P' == item[i][11]:
                                                     continue
                                                 else:
-                                                    pre_S.append( element[1] )
+                                                    pre_S.append( item[i][1] )
                                     for i in range( S_index + 1, len( item ) ):
                                         if i != A_index:
                                             if 3 >= abs( int( item[i][9] ) - PHead ):
                                                 if 'DT' == item[i][5] or 'P' == item[i][11]:
                                                     continue
                                                 else:
-                                                    post_S.append( element[1] )
+                                                    post_S.append( item[i][1] )
                                 else:
                                     for i in range( S_index + 1, len( item ) ):
                                         if i != A_index:
@@ -75,8 +76,10 @@ class Parser():
                                 S = pre_S
                                 S.extend( post_S )
                                 # get one sao struct
+                                #
                                 sao.append( S )
-                                saos.append( sao )
+                                saos.append( copy.deepcopy( sao ) )
+                                break
             SAOS.append( saos )
         return  SAOS
 

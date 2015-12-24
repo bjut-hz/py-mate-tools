@@ -39,9 +39,8 @@ class Parser():
                         sao.append( _item[1] )
                         PHead = int( _item[9] )
                         A_index = int( _item[0] ) - 1
-                        # we can get the sao struct according to th Args
+                        # we can get the sao struct according to the Args
                         # get the S
-                        S_index = 0
                         for element in item :
                             if None != re.match( 'A\w*', element[ 13+index ] ):
                                 S = []
